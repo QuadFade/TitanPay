@@ -11,6 +11,7 @@ package com.titanpay.accounting;
  * getFullName()
  */
 
+	
 
 public class Employee {
 	private String employeeid;
@@ -18,19 +19,42 @@ public class Employee {
 	private String lastName;
 	private double hourlyRate;
 	private double weeklyDues;
+
 	
-	public Employee(String employeeid, String firstName, String lastName, double hourlyRate,double weeklyDues){		
+	public Employee(double hourlyRate,double weeklyDues, double salary, String lastName, String firstName, String employeeid){		
 		this.employeeid = employeeid;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.setFirstName(firstName);
+		this.setLastName(lastName);
 		this.hourlyRate = hourlyRate;
 		this.weeklyDues = weeklyDues;	
 	}
-	
+
+	public Employee(double salary, double commissionRate, double weeklyDues2) {
+		
+	}
+
+
 	public String getFullName(){
-		return lastName + ", " + firstName;
+		return getLastName() + ", " + getFirstName();
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	
 	
 	
+
 }
