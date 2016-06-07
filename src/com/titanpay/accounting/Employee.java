@@ -14,47 +14,23 @@ package com.titanpay.accounting;
 	
 
 public class Employee {
-	private String employeeid;
-	private String firstName;
-	private String lastName;
-	private double hourlyRate;
-	private double weeklyDues;
+//	private String employeeid;
+//	private String firstName;
+//	private String lastName;
+//	private double hourlyRate;
+//	private double weeklyDues;
 
 	
-	public Employee(double hourlyRate,double weeklyDues, double salary, String lastName, String firstName, String employeeid){		
-		this.employeeid = employeeid;
-		this.setFirstName(firstName);
-		this.setLastName(lastName);
-		this.hourlyRate = hourlyRate;
-		this.weeklyDues = weeklyDues;	
-	}
-
-	public Employee(double salary, double commissionRate, double weeklyDues2) {
-		
+	public Employee(double hourlyRate,double weeklyDues, double salary, String lastName, String firstName, String employeeid, int hoursWorked){		
+//		this.employeeid = employeeid;
+//		this.setFirstName(firstName);
+//		this.setLastName(lastName);
+//		this.hourlyRate = hourlyRate;
+//		this.weeklyDues = weeklyDues;	
 	}
 
 
-	public String getFullName(){
-		return getLastName() + ", " + getFirstName();
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	
-	
-	
 
 }
+	
+
