@@ -1,30 +1,20 @@
-package com.titanpay.accounting; 
+package com.titanpay.accounting;
 
-/*
- * employeeid
- * firstName
- * lastName
- * salary
- * commisionRate
- * weeklyDues
- * 
- * getFullName()
- */
-
-	
+import java.util.ArrayList;
 
 public abstract class Employee {
 	private String employeeid;
 	private String firstName;
 	private String lastName;
 	private double weeklyDues;
-
+    
 	
 	public Employee(double weeklyDues, String lastName, String firstName, String employeeid){		
 		this.employeeid = employeeid;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.weeklyDues = weeklyDues;	
+		this.weeklyDues = weeklyDues;
+		
 	}
 
 	
@@ -67,12 +57,18 @@ public abstract class Employee {
 
 	
 	public String getFullName(){
-		return lastName + ", " + firstName;
+		return  firstName + "," + lastName;
 
 
 
 
 	}
+	
+	public void makeSale(double amt){
+		
+		
+	}
+	
 	
 }
 	

@@ -1,5 +1,7 @@
 package com.titanpay.accounting;
 
+import java.util.Date;
+
 /*
  * date
  * saleAmt
@@ -9,15 +11,22 @@ package com.titanpay.accounting;
 public class Receipt{
 	
 	//create exception for date when 1-12 
-	public int date;
-	public double salesAmt;
+	private Date date;
+	private double salesAmt;
 	
-	public Receipt(int date, double salesAmt){
+	public Receipt(Date date, double salesAmt){
 		this.date = date;
 		this.salesAmt = salesAmt;
 		
 	}
+
+	public Date getDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	
+	public double getSalesAmount() {
+		return salesAmt;
+	}
 	
 }

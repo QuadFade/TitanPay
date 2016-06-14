@@ -9,7 +9,7 @@ package com.titanpay.accounting;
  */
 	
 	
-public class BankAccount {
+public abstract class BankAccount {
 	
 	private String bankName;
 	private double routingNumber;
@@ -29,10 +29,7 @@ public class BankAccount {
 		
 	}
 	
-	public void deposit(double amt) {
-		System.out.println("Depositing $" + amt + "In Bank of America Account Number" + accountid + "using Routing Number:" + routingNumber);
-	
-	}
+	public abstract void deposit(double amt);
 		
 		
 		
