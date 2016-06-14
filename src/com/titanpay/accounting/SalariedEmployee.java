@@ -49,5 +49,11 @@ public class SalariedEmployee extends Employee implements Payable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	@Override
+	public void pay() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

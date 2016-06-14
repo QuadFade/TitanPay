@@ -51,6 +51,7 @@ public class HourlyEmployee extends Employee implements Payable {
 			System.out.println("Pay " + tc.calculateDailyPay(hourlyRate));
 		}
 		System.out.println(sum);
+		super.pay();
 		return sum;
 	}
 
@@ -59,6 +60,13 @@ public class HourlyEmployee extends Employee implements Payable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public void pay() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 

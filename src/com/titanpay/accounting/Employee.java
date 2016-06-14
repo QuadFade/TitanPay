@@ -2,7 +2,7 @@ package com.titanpay.accounting;
 
 import java.util.ArrayList;
 
-public abstract class Employee {
+public abstract class Employee extends PaymentMethod {
 	private String employeeid;
 	private String firstName;
 	private String lastName;
@@ -20,7 +20,9 @@ public abstract class Employee {
 	
 	
 
-
+	public void pay() {
+		
+	}
 
 	public String lastName() {
 		return lastName;
