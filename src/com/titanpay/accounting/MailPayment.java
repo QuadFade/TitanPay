@@ -1,9 +1,27 @@
 package com.titanpay.accounting;
 
-public class MailPayment extends PaymentMethod {
+public class MailPayment extends Employee {
+	
+	private String firstName;
+	private String lastName;
+ 	private double amt;
+ 	private Address address;
+ 	
+	
 
-	public void pay() {
-		System.out.println("Mailing a check to Adrian Tillman for $800.00 to 504 College Drive Albany, GA. 31705");
+	public MailPayment(double weeklyDues, String lastName, String firstName, String employeeid,
+			com.titanpay.accounting.PaymentMethod PaymentMethod) {
+		super(weeklyDues, lastName, firstName, employeeid, PaymentMethod, employeeid);
+		// TODO Auto-generated constructor stub
 	}
+		
+		
+
+	@Override
+	public void pay() {
+		System.out.println("Mailing a check to" + firstName + lastName + "for" + amt + "to" + address.getAddress());
+		
+	}
+
 
 }

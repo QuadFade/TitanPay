@@ -6,17 +6,18 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-public class HourlyEmployee extends Employee implements Payable {
+public class HourlyEmployee extends Employee {
 	//
 	private double hourlyRate;
 	private int hoursWorked;
 	private ArrayList<TimeCard> timeCards = new ArrayList<TimeCard>();
 
 	public HourlyEmployee(double weeklyDues, String lastName, String firstName, String employeeid, double hourlyRate,
-			int hoursWorked) {
-		super(weeklyDues, lastName, firstName, employeeid);
+			int hoursWorked, ArrayList<TimeCard> timecards, PaymentMethod PaymentMethod, String bankName) {
+		super(weeklyDues, lastName, firstName, employeeid, PaymentMethod,bankName);
 		this.hourlyRate = hourlyRate;
 		this.hoursWorked = hoursWorked;
+		this.timeCards = timecards;
 	}
 
 	public void clockIn() {
@@ -36,7 +37,7 @@ public class HourlyEmployee extends Employee implements Payable {
 	}
 
 	@Override
-	public double pay(Date startDate, Date endDate) {
+	public void pay(Date startDate, Date endDate) {
 
 		double sum = 0;
 		for (TimeCard tc : timeCards) {
@@ -45,20 +46,20 @@ public class HourlyEmployee extends Employee implements Payable {
 
 			if ((startCompare == 0 || startCompare > 0) && (endCompare == 0 || endCompare < 0)) {
 				sum += tc.calculateDailyPay(hourlyRate);
-				System.out.println("withindates");
+				
 			}
-
-			System.out.println("Pay " + tc.calculateDailyPay(hourlyRate));
+		
 		}
-		System.out.println(sum);
-		super.pay();
-		return sum;
+		
+		this.pay();
+		
+
 	}
 
 	@Override
-	public double pay(Date date, double saleAmt) {
+	public void pay(Date date, double saleAmt) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
@@ -66,8 +67,8 @@ public class HourlyEmployee extends Employee implements Payable {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-
 }
+
+
+
+

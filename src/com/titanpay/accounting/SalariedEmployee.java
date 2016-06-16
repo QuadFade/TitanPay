@@ -14,18 +14,19 @@ import java.util.Date;
  *getFullName()
 */
 
-public class SalariedEmployee extends Employee implements Payable {
+public class SalariedEmployee extends Employee {
 
 	private double salary;
 	private double commissionRate;
-	private ArrayList<Receipt> receipts = new ArrayList<>();
+	private ArrayList<Receipt> receipts = new ArrayList<Receipt>();
 
 	public SalariedEmployee(double salary, double commissionRate, double weeklyDues, String lastName, String firstName,
-			String employeeid, ArrayList<Receipt> receipts) {
-		super(weeklyDues, lastName, firstName, employeeid);
+			String employeeid, ArrayList<Receipt> receipts, PaymentMethod PaymentMethod, String bankName) {
+		super(weeklyDues, lastName, firstName, employeeid, PaymentMethod, bankName);
 		this.salary = salary;
 		this.commissionRate = commissionRate;
 		this.receipts = receipts;
+		
 
 	}
 	public void makeSale(double amt){
@@ -33,21 +34,15 @@ public class SalariedEmployee extends Employee implements Payable {
 	}
 
 	@Override
-	public double pay(Date date, double saleAmt) {
+	public void pay(Date date, double saleAmt) {
 		double sales = 0.0;
 		for(Receipt r : receipts) {
 			//int recordDate = r.getDate().compareTo(date);
 			sales += r.getSalesAmount();
 		}
 		sales = sales * commissionRate;
-		return sales;
+		this.PaymentMethod.pay();
 		
-	
-	}
-	@Override
-	public double pay(Date startDate, Date endDate) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 	@Override
 	public void pay() {

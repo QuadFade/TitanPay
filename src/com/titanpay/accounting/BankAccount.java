@@ -12,24 +12,28 @@ import java.util.Date;
  */
 	
 	
-public class BankAccount extends PaymentMethod implements Payable {
+public class BankAccount extends Employee implements Payable {
 	
 	private String bankName;
 	private double routingNumber;
-	private String accountid; 
+	private String accountid;
+	private double amt;
 
-	public BankAccount(String bankName, double routingNumber, String accountID){
+	public BankAccount(String bankName, double routingNumber, String accountID, double amt,
+			String firstName, String lastName, double weeklyDues, PaymentMethod PaymentMethod, String employeeid){
+		super(weeklyDues, lastName, firstName, employeeid, PaymentMethod, bankName);
 		this.bankName = bankName;
 		this.routingNumber = routingNumber;
-		this.accountid = accountID;;
+		this.accountid = accountID;
+		this.amt = amt;
 	}
 	
-	public BankAccount() {
-		this.bankName = " ";
-		this.routingNumber = 0;
-		this.accountid = " ";
-		
-	}
+//	public BankAccount() {
+//		this.bankName = " ";
+//		this.routingNumber = 0;
+//		this.accountid = " ";
+//		this.amt = 0.0;
+//	}
 	
 	@Override
 	public void pay() {
@@ -38,19 +42,19 @@ public class BankAccount extends PaymentMethod implements Payable {
 	}
 	
 	public void deposit(double amt){
-		System.out.println("Depositing" + amt + " in" + bankName + "Account Number" + accountid + "using Routing Number" + routingNumber);
+		
 		}
 
 	@Override
-	public double pay(Date date, double saleAmt) {
+	public void pay(Date date, double saleAmt) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
-	public double pay(Date startDate, Date endDate) {
+	public void pay(Date startDate, Date endDate) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 

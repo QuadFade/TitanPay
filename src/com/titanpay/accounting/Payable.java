@@ -10,9 +10,9 @@ import java.util.Date;
  */
 public interface Payable {
 
-	double pay(Date date, double saleAmt);
+	void pay(Date date, double saleAmt);
 
-	double pay(Date startDate, Date endDate);
+	void pay(Date startDate, Date endDate);
 	
 		
 }
